@@ -1,0 +1,46 @@
+{
+  "name": "cartelera-api",
+  "version": "1.0.0",
+  "description": "GraphQL API para obtener informacion de la cartelera de cine desde la pagina http://tandas.world/",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon ./dist/server.bundle.js --exec \"npm run docs & webpack\"",
+    "docs": "jsdoc -c ./conf.json ./README.md",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/victorstein/GraphQl.git"
+  },
+  "keywords": [
+    "GraphQL",
+    "Nicaragua",
+    "Cartelera",
+    "Javascript",
+    "JS",
+    "Pupeteer",
+    "Express",
+    "Node.js"
+  ],
+  "author": "Alfonso Gomez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/victorstein/GraphQl/issues"
+  },
+  "homepage": "https://github.com/victorstein/GraphQl#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "jsdoc": "^3.5.5",
+    "nodemon": "^1.18.4",
+    "tui-jsdoc-template": "^1.2.2",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12"
+  }
+}
