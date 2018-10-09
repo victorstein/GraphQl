@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Module: server | Cartelera Nicaragua</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-jsdoc.css">
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/tui-doc.css">
+
+    
+        
+            <link type="text/css" rel="stylesheet" href="../docStyles/styles.css">
+        
+    
+</head>
+<body>
+<nav class="lnb" id="lnb">
+    <div class="logo" style="width: 40px; height: 40px">
+        
+            <a href="#" rel="noopener noreferrer" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg" width="100%" height="100%">
+            </a>
+        
+    </div>
+    <div class="title">
+        <h1><a href="index.html" class="link">Cartelera Nicaragua</a></h1>
+        
+    </div>
+    <div class="search-container" id="search-container">
+        <input type="text" placeholder="Search">
+        <ul></ul>
+    </div>
+    
+    <div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="module-MovieType.html">MovieType</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:MovieType_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-MovieType.html#~graphQLObjectType">graphQLObjectType</a></li><li><a href="module-MovieType.html#~GraphQLString">GraphQLString</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-MovieType.html#~graphQLObjectType">graphQLObjectType</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-MovieType.html#~fields">fields</a></li><li><a href="module-MovieType.html#~name">name</a></li></ul></div></li><li><a href="module-RootQueryType.html">RootQueryType</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RootQueryType_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-RootQueryType.html#~graphQLObjectType">graphQLObjectType</a></li><li><a href="module-RootQueryType.html#~GraphQLString">GraphQLString</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-RootQueryType.html#~graphQLObjectType">graphQLObjectType</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-RootQueryType.html#~fields">fields</a></li><li><a href="module-RootQueryType.html#~name">name</a></li></ul></div></li><li><a href="module-server.html">server</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:server_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-server.html#~app">app</a></li><li><a href="module-server.html#~port">port</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-server.html#~listen">listen</a></li><li><a href="module-server.html#~use">use</a></li></ul></div></li></ul></div>
+</nav>
+<div id="resizer"></div>
+
+<div class="main" id="main">
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>server</h2>
+        
+            
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+                <div class="description">Entry point for th GraphQL API. <br /> The file requires the following libraries:<br/><br/>express <a href="https://expressjs.com/es/starter/installing.html">https://expressjs.com/es/starter/installing.html</a><br/>expressGraphQL <a href="https://github.com/graphql/express-graphql#simple-setup">https://github.com/graphql/express-graphql#simple-setup</a><br/><br/></div>
+            
+
+            
+                
+
+<dt>
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-author">Author:</dt>
+    <dd class="tag-author">
+        <ul>
+            <li>Alfonso Gomez</li>
+        </ul>
+    </dd>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+        
+        </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+
+<dt>
+<h4 class="name" id="~app">
+    <span class="type-signature"><span class="icon green">inner</span>, <span class="icon green">constant</span> </span>app<span class="type-signature"></span>
+    
+    <div class="container-source members">
+        <code><a href="server.js.html">server.js</a></code>,
+        <code><a href="server.js.html#line13">line 13</a></code>
+    </div>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        constant that holds an express instance
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        
+            
+
+<dt>
+<h4 class="name" id="~port">
+    <span class="type-signature"><span class="icon green">inner</span>, <span class="icon green">constant</span> </span>port<span class="type-signature"></span>
+    
+    <div class="container-source members">
+        <code><a href="server.js.html">server.js</a></code>,
+        <code><a href="server.js.html#line29">line 29</a></code>
+    </div>
+    
+</h4>
+
+
+</dt>
+<dd>
+    
+    <div class="description">
+        constant holding the value of the PORT environment variable or port 3000
+    </div>
+    
+
+    <!--
+    
+    -->
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+    
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+                
+
+<dt>
+    
+        <h4 class="name" id="~listen">
+            
+                <span class="type-signature"><span class="icon green">inner</span> </span>listen<span class="signature">(port, callback)</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="server.js.html">server.js</a></code>,
+                <code><a href="server.js.html#line35">line 35</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>port</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">predefined port to run the server</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This function runs when the app starts listening to the specified port</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="https://expressjs.com/es/4x/api.html#app.listen">https://expressjs.com/es/4x/api.html#app.listen</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            
+                
+
+<dt>
+    
+        <h4 class="name" id="~use">
+            
+                <span class="type-signature"><span class="icon green">inner</span> </span>use<span class="signature">(endpoint, callback)</span><span class="type-signature"></span>
+                
+            
+            <div class="container-source members">
+                <code><a href="server.js.html">server.js</a></code>,
+                <code><a href="server.js.html#line19">line 19</a></code>
+            </div>
+            
+        </h4>
+
+        
+    
+</dt>
+<dd>
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="container-params">
+        <h5>Parameters:</h5>
+        
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>endpoint</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">predefined endpoint to resolve</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">function</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">This function runs when the endpoint is requested</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="http://expressjs.com/es/api.html#app.use">http://expressjs.com/es/api.html#app.use</a></li>
+        </ul>
+    </dd>
+    
+
+    
+</dl>
+
+
+    
+
+</dd>
+
+            </dl>
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<footer>
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/1/17/GraphQL_Logo.svg" style="width: 40px; height: 40px">
+    <div class="footer-text">Created by Alfonso Gomez</div>
+</footer>
+<script>prettyPrint();</script>
+<script src="scripts/jquery.min.js"></script>
+<script src="scripts/tui-doc.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+    <script>
+        var id = 'module:server_sub'.replace(/"/g, '_');
+        var selectedApi = document.getElementById(id); // do not use jquery selector
+        var $selectedApi = $(selectedApi);
+
+        $selectedApi.removeClass('hidden');
+        $selectedApi.parent().find('.glyphicon').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+        showLnbApi();
+    </script>
+
+</body>
+</html>
