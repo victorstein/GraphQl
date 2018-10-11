@@ -40,7 +40,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="module-MovieType.html">MovieType</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:MovieType_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-MovieType.html#~graphQLObjectType">graphQLObjectType</a></li><li><a href="module-MovieType.html#~GraphQLString">GraphQLString</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-MovieType.html#~graphQLObjectType">graphQLObjectType</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-MovieType.html#~fields">fields</a></li><li><a href="module-MovieType.html#~name">name</a></li></ul></div></li><li><a href="module-RootQueryType.html">RootQueryType</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RootQueryType_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-RootQueryType.html#~graphQLObjectType">graphQLObjectType</a></li><li><a href="module-RootQueryType.html#~GraphQLString">GraphQLString</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-RootQueryType.html#~graphQLObjectType">graphQLObjectType</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-RootQueryType.html#~fields">fields</a></li><li><a href="module-RootQueryType.html#~name">name</a></li></ul></div></li><li><a href="module-server.html">server</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:server_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-server.html#~app">app</a></li><li><a href="module-server.html#~port">port</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-server.html#~listen">listen</a></li><li><a href="module-server.html#~use">use</a></li></ul></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="module-MovieType.html">MovieType</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:MovieType_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-MovieType.html#~graphQLObjectType">graphQLObjectType</a></li><li><a href="module-MovieType.html#~GraphQLString">GraphQLString</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-MovieType.html#~graphQLObjectType">graphQLObjectType</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-MovieType.html#~fields">fields</a></li><li><a href="module-MovieType.html#~name">name</a></li></ul></div></li><li><a href="module-RootQueryType.html">RootQueryType</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RootQueryType_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="module-RootQueryType.html#~graphQLObjectType">graphQLObjectType</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-RootQueryType.html#~fields">fields</a></li><li><a href="module-RootQueryType.html#~name">name</a></li></ul></div></li><li><a href="module-Server.html">Server</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:Server_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-Server.html#~app">app</a></li><li><a href="module-Server.html#~port">port</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-Server.html#~listen">listen</a></li><li><a href="module-Server.html#~use">use</a></li></ul></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -55,26 +55,49 @@
             <pre class="prettyprint source linenums"><code>/**
  * @module RootQueryType
  * @description This module contains all the graphQL schema definitions
- * @see {@link https://graphql.org/graphql-js/type/}
  * &lt;br/>&lt;br/>
+ * @requires MovieType
+ * @requires graphql
+ * @requires GraphQLObjectType
+ * @requires GraphQLString
+ * @requires GraphQLSchema
  * @author Alfonso Gomez
+ * @see {@link https://graphql.org/graphql-js/type/}
 */
-import graphql from 'graphql'
+
+import graphql, { GraphQLObjectType, GraphQLString, GraphQLSchema } from 'graphql'
 import MovieType from './MovieType'
 
-/**
- * @constant graphQLObjectType
- * @description Destructuring graphQL object to retreive graphQLObjectType and GraphQLString
-*/
-/**
- * @constant GraphQLString
- * @description Destructuring graphQL object to retreive GraphQLString
-*/
-const {
-  graphQLObjectType,
-  GraphQLString
-} = graphql
-
+const db = [
+  {
+    id: "10",
+    name: "Venom",
+    rating: "80%",
+    duration: "1h 30 min",
+    classification: "PG-13",
+    genere: "Action",
+    director: "Alfonso Cuaron",
+    releaseDate: "Today",
+    synopsis: "Some synopsis",
+    trailer: "https://someptrailer.com",
+    cover_photo: "https://somepicture.com",
+    small_photo: "https://somebigpicture.com"
+  },
+  {
+    id: "11",
+    name: "Hobbit",
+    rating: "20%",
+    duration: "2h 30 min",
+    classification: "R",
+    genere: "Adventure",
+    director: "D'vito Gomez",
+    releaseDate: "Yesterday",
+    synopsis: "Some bad synopsis",
+    trailer: "https://someptrailer.com",
+    cover_photo: "https://somepicture.com",
+    small_photo: "https://somebigpicture.com"
+  }
+]
 
 /**
  * @function graphQLObjectType
@@ -83,7 +106,7 @@ const {
  * @property {key} fields Object that containes the schema definition
  * @description Constructor class for the RootQueryType schema
 */
-const RootQuery = new graphQLObjectType({
+const RootQuery = new GraphQLObjectType({
   /**
     * @typedef {string} name Contains the name of the type definition "RootQueryType"
   */
@@ -101,10 +124,14 @@ const RootQuery = new graphQLObjectType({
       type: MovieType,
       args: { id: { type: GraphQLString } },
       resolve: (parentValue, args)=>{
-
+        return db.find(u => u.id === args.id)
       }
     }
   }
+})
+
+export default new GraphQLSchema({
+  query: RootQuery
 })
 </code></pre>
         </article>

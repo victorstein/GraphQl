@@ -2,12 +2,12 @@
   "name": "cartelera-api",
   "version": "1.0.0",
   "description": "GraphQL API para obtener informacion de la cartelera de cine desde la pagina http://tandas.world/",
-  "main": "server.js",
+  "main": "Server.js",
   "scripts": {
-    "dev": "nodemon ./dist/server.bundle.js --exec \"npm run docs & webpack & npm run server\"",
+    "dev": "nodemon ./dist/Server.bundle.js --exec \"npm run docs & webpack & npm run server\"",
     "docs": "jsdoc -c ./conf.json ./README.md",
     "build": "webpack",
-    "server": "node dist/server.bundle.js"
+    "server": "node dist/Server.bundle.js"
   },
   "repository": {
     "type": "git",

@@ -1,11 +1,15 @@
 /**
  * @module MovieType
  * @description this module contains the Movie Schema definition
- * @see {@link https://graphql.org/graphql-js/type/}
  * <br/><br/>
+ * @requires graphql
+ * @requires GraphQLObjectType
+ * @requires GraphQLString
  * @author Alfonso Gomez
+ * @see {@link https://graphql.org/graphql-js/type/}
 */
-import graphql from 'graphql'
+
+import graphql, { GraphQLObjectType, GraphQLString } from 'graphql'
 
 /**
  * @constant graphQLObjectType
@@ -15,10 +19,6 @@ import graphql from 'graphql'
  * @constant GraphQLString
  * @description Destructuring graphQL object to retreive GraphQLString
 */
-const {
-  graphQLObjectType,
-  GraphQLString
-} = graphql
 
 /**
  * @function graphQLObjectType
@@ -27,7 +27,7 @@ const {
  * @property {key} fields Object that containes the schema definition
  * @description Constructor class for the MovieType schema
 */
-const MovieType = new graphQLObjectType({
+const MovieType = new GraphQLObjectType({
   /**
     * @typedef {string} name Contains the name of the type definition "Movie"
   */

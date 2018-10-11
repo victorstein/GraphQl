@@ -1,14 +1,16 @@
 /**
- * @module server
+ * @module Server
  * @description Entry point for th GraphQL API. <br /> The file requires the following libraries:
  * <br/><br/>
  * express {@link https://expressjs.com/es/starter/installing.html}<br/>
- * expressGraphQL {@link https://github.com/graphql/express-graphql#simple-setup}
+ * expressGraphQL {@link https://github.com/graphql/express-graphql#simple-setup}<br/>
+ * @requires RootQueryType
  * <br/><br/>
  * @author Alfonso Gomez
 */
 import express from 'express'
 import expressGraphQL from 'express-graphql'
+import RootQuery from './schema/RootQueryType'
 
 /**
  * @constant app
@@ -23,6 +25,7 @@ const app = express();
  * @see {@link http://expressjs.com/es/api.html#app.use}
 */
 app.use("/", expressGraphQL({
+  schema: RootQuery,
   graphiql: true
 }));
 

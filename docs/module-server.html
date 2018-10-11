@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Module: server | Cartelera Nicaragua</title>
+    <title>Module: Server | Cartelera Nicaragua</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -38,7 +38,7 @@
         <ul></ul>
     </div>
     
-    <div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="module-MovieType.html">MovieType</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:MovieType_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-MovieType.html#~graphQLObjectType">graphQLObjectType</a></li><li><a href="module-MovieType.html#~GraphQLString">GraphQLString</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-MovieType.html#~graphQLObjectType">graphQLObjectType</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-MovieType.html#~fields">fields</a></li><li><a href="module-MovieType.html#~name">name</a></li></ul></div></li><li><a href="module-RootQueryType.html">RootQueryType</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RootQueryType_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-RootQueryType.html#~graphQLObjectType">graphQLObjectType</a></li><li><a href="module-RootQueryType.html#~GraphQLString">GraphQLString</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-RootQueryType.html#~graphQLObjectType">graphQLObjectType</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-RootQueryType.html#~fields">fields</a></li><li><a href="module-RootQueryType.html#~name">name</a></li></ul></div></li><li><a href="module-server.html">server</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:server_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-server.html#~app">app</a></li><li><a href="module-server.html#~port">port</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-server.html#~listen">listen</a></li><li><a href="module-server.html#~use">use</a></li></ul></div></li></ul></div>
+    <div class="lnb-api hidden"><h3>Modules</h3><ul><li><a href="module-MovieType.html">MovieType</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:MovieType_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-MovieType.html#~graphQLObjectType">graphQLObjectType</a></li><li><a href="module-MovieType.html#~GraphQLString">GraphQLString</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-MovieType.html#~graphQLObjectType">graphQLObjectType</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-MovieType.html#~fields">fields</a></li><li><a href="module-MovieType.html#~name">name</a></li></ul></div></li><li><a href="module-RootQueryType.html">RootQueryType</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:RootQueryType_sub"><div class="member-type">Methods</div><ul class="inner"><li><a href="module-RootQueryType.html#~graphQLObjectType">graphQLObjectType</a></li></ul><div class="member-type">Typedef</div><ul class="inner"><li><a href="module-RootQueryType.html#~fields">fields</a></li><li><a href="module-RootQueryType.html#~name">name</a></li></ul></div></li><li><a href="module-Server.html">Server</a><button type="button" class="hidden toggle-subnav btn btn-link">  <span class="glyphicon glyphicon-plus"></span></button><div class="hidden" id="module:Server_sub"><div class="member-type">Members</div><ul class="inner"><li><a href="module-Server.html#~app">app</a></li><li><a href="module-Server.html#~port">port</a></li></ul><div class="member-type">Methods</div><ul class="inner"><li><a href="module-Server.html#~listen">listen</a></li><li><a href="module-Server.html#~use">use</a></li></ul></div></li></ul></div>
 </nav>
 <div id="resizer"></div>
 
@@ -52,7 +52,7 @@
 
 <header>
     
-        <h2>server</h2>
+        <h2>Server</h2>
         
             
         
@@ -64,7 +64,7 @@
         <div class="container-overview">
         
             
-                <div class="description">Entry point for th GraphQL API. <br /> The file requires the following libraries:<br/><br/>express <a href="https://expressjs.com/es/starter/installing.html">https://expressjs.com/es/starter/installing.html</a><br/>expressGraphQL <a href="https://github.com/graphql/express-graphql#simple-setup">https://github.com/graphql/express-graphql#simple-setup</a><br/><br/></div>
+                <div class="description">Entry point for th GraphQL API. <br /> The file requires the following libraries:<br/><br/>express <a href="https://expressjs.com/es/starter/installing.html">https://expressjs.com/es/starter/installing.html</a><br/>expressGraphQL <a href="https://github.com/graphql/express-graphql#simple-setup">https://github.com/graphql/express-graphql#simple-setup</a><br/></div>
             
 
             
@@ -153,6 +153,12 @@
     
 
     
+        <h3 class="subsection-title">Requires</h3>
+
+        <ul>
+            <li><a href="module-RootQueryType.html">module:RootQueryType</a></li>
+        </ul>
+    
 
     
 
@@ -173,8 +179,8 @@
     <span class="type-signature"><span class="icon green">inner</span>, <span class="icon green">constant</span> </span>app<span class="type-signature"></span>
     
     <div class="container-source members">
-        <code><a href="server.js.html">server.js</a></code>,
-        <code><a href="server.js.html#line13">line 13</a></code>
+        <code><a href="Server.js.html">Server.js</a></code>,
+        <code><a href="Server.js.html#line15">line 15</a></code>
     </div>
     
 </h4>
@@ -242,8 +248,8 @@
     <span class="type-signature"><span class="icon green">inner</span>, <span class="icon green">constant</span> </span>port<span class="type-signature"></span>
     
     <div class="container-source members">
-        <code><a href="server.js.html">server.js</a></code>,
-        <code><a href="server.js.html#line29">line 29</a></code>
+        <code><a href="Server.js.html">Server.js</a></code>,
+        <code><a href="Server.js.html#line32">line 32</a></code>
     </div>
     
 </h4>
@@ -320,8 +326,8 @@
                 
             
             <div class="container-source members">
-                <code><a href="server.js.html">server.js</a></code>,
-                <code><a href="server.js.html#line35">line 35</a></code>
+                <code><a href="Server.js.html">Server.js</a></code>,
+                <code><a href="Server.js.html#line38">line 38</a></code>
             </div>
             
         </h4>
@@ -485,8 +491,8 @@
                 
             
             <div class="container-source members">
-                <code><a href="server.js.html">server.js</a></code>,
-                <code><a href="server.js.html#line19">line 19</a></code>
+                <code><a href="Server.js.html">Server.js</a></code>,
+                <code><a href="Server.js.html#line21">line 21</a></code>
             </div>
             
         </h4>
@@ -664,7 +670,7 @@
 <script src="scripts/linenumber.js"></script>
 
     <script>
-        var id = 'module:server_sub'.replace(/"/g, '_');
+        var id = 'module:Server_sub'.replace(/"/g, '_');
         var selectedApi = document.getElementById(id); // do not use jquery selector
         var $selectedApi = $(selectedApi);
 

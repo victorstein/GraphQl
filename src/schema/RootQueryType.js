@@ -1,26 +1,49 @@
 /**
  * @module RootQueryType
  * @description This module contains all the graphQL schema definitions
- * @see {@link https://graphql.org/graphql-js/type/}
  * <br/><br/>
+ * @requires MovieType
+ * @requires graphql
+ * @requires GraphQLObjectType
+ * @requires GraphQLString
+ * @requires GraphQLSchema
  * @author Alfonso Gomez
+ * @see {@link https://graphql.org/graphql-js/type/}
 */
-import graphql from 'graphql'
+
+import graphql, { GraphQLObjectType, GraphQLString, GraphQLSchema } from 'graphql'
 import MovieType from './MovieType'
 
-/**
- * @constant graphQLObjectType
- * @description Destructuring graphQL object to retreive graphQLObjectType and GraphQLString
-*/
-/**
- * @constant GraphQLString
- * @description Destructuring graphQL object to retreive GraphQLString
-*/
-const {
-  graphQLObjectType,
-  GraphQLString
-} = graphql
-
+const db = [
+  {
+    id: "10",
+    name: "Venom",
+    rating: "80%",
+    duration: "1h 30 min",
+    classification: "PG-13",
+    genere: "Action",
+    director: "Alfonso Cuaron",
+    releaseDate: "Today",
+    synopsis: "Some synopsis",
+    trailer: "https://someptrailer.com",
+    cover_photo: "https://somepicture.com",
+    small_photo: "https://somebigpicture.com"
+  },
+  {
+    id: "11",
+    name: "Hobbit",
+    rating: "20%",
+    duration: "2h 30 min",
+    classification: "R",
+    genere: "Adventure",
+    director: "D'vito Gomez",
+    releaseDate: "Yesterday",
+    synopsis: "Some bad synopsis",
+    trailer: "https://someptrailer.com",
+    cover_photo: "https://somepicture.com",
+    small_photo: "https://somebigpicture.com"
+  }
+]
 
 /**
  * @function graphQLObjectType
@@ -29,7 +52,7 @@ const {
  * @property {key} fields Object that containes the schema definition
  * @description Constructor class for the RootQueryType schema
 */
-const RootQuery = new graphQLObjectType({
+const RootQuery = new GraphQLObjectType({
   /**
     * @typedef {string} name Contains the name of the type definition "RootQueryType"
   */
@@ -47,8 +70,12 @@ const RootQuery = new graphQLObjectType({
       type: MovieType,
       args: { id: { type: GraphQLString } },
       resolve: (parentValue, args)=>{
-
+        return db.find(u => u.id === args.id)
       }
     }
   }
+})
+
+export default new GraphQLSchema({
+  query: RootQuery
 })
