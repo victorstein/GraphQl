@@ -4,6 +4,7 @@
  * <br/><br/>
  * express {@link https://expressjs.com/es/starter/installing.html}<br/>
  * expressGraphQL {@link https://github.com/graphql/express-graphql#simple-setup}<br/>
+ * firebase-functions {@link https://firebase.google.com/docs/functions/}<br/>
  * @requires RootQueryType
  * <br/><br/>
  * @author Alfonso Gomez
@@ -11,6 +12,7 @@
 import express from 'express'
 import expressGraphQL from 'express-graphql'
 import RootQuery from './schema/RootQueryType'
+import * as functions from 'firebase-functions'
 
 /**
  * @constant app
@@ -24,10 +26,14 @@ const app = express();
  * @param {function} callback This function runs when the endpoint is requested
  * @see {@link http://expressjs.com/es/api.html#app.use}
 */
-app.use("/", expressGraphQL({
+app.use("/graphql", expressGraphQL({
   schema: RootQuery,
   graphiql: true
 }));
+
+app.use("/feedDatabase", ()=>{
+
+});
 
 /**
  * @constant port
@@ -35,10 +41,4 @@ app.use("/", expressGraphQL({
 */
 const port = process.env.PORT || 3000;
 
-/**
- * @method listen
- * @param {String} port predefined port to run the server
- * @param {function} callback This function runs when the app starts listening to the specified port
- * @see {@link https://expressjs.com/es/4x/api.html#app.listen}
-*/
-app.listen(port, ()=> console.log(`listening in port ${3000}`))
+exports.app = functions.https.onRequest(app)

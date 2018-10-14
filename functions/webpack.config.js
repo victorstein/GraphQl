@@ -7,8 +7,8 @@ module.exports = {
         server: './src/Server.js'
     },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'Server.bundle.js'
+        path: __dirname,
+        filename: 'Server.js'
     },
     module: {
         rules: [{

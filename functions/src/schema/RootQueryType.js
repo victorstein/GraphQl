@@ -1,8 +1,9 @@
 /**
  * @module RootQueryType
- * @description This module contains all the graphQL schema definitions
- * <br/><br/>
+ * @description This module contains all the graphQL schema definitions<br/><br/>
  * @requires MovieType
+ * @requires TheaterType
+ * @requires HelperFunctions
  * @requires graphql
  * @requires GraphQLObjectType
  * @requires GraphQLString
@@ -13,37 +14,15 @@
 
 import graphql, { GraphQLObjectType, GraphQLString, GraphQLSchema } from 'graphql'
 import MovieType from './MovieType'
+import TheaterType from './TheaterType'
+import * as helper from '../helpers/functions'
 
-const db = [
-  {
-    id: "10",
-    name: "Venom",
-    rating: "80%",
-    duration: "1h 30 min",
-    classification: "PG-13",
-    genere: "Action",
-    director: "Alfonso Cuaron",
-    releaseDate: "Today",
-    synopsis: "Some synopsis",
-    trailer: "https://someptrailer.com",
-    cover_photo: "https://somepicture.com",
-    small_photo: "https://somebigpicture.com"
-  },
-  {
-    id: "11",
-    name: "Hobbit",
-    rating: "20%",
-    duration: "2h 30 min",
-    classification: "R",
-    genere: "Adventure",
-    director: "D'vito Gomez",
-    releaseDate: "Yesterday",
-    synopsis: "Some bad synopsis",
-    trailer: "https://someptrailer.com",
-    cover_photo: "https://somepicture.com",
-    small_photo: "https://somebigpicture.com"
-  }
-]
+/**
+ * @constant date
+ * @description constant that contains the current date in format dmyyyy from the helper function getCurrentDateString
+ * @see module:HelperFunctions
+*/
+const date = helper.getCurrentDateString();
 
 /**
  * @function graphQLObjectType
@@ -70,7 +49,20 @@ const RootQuery = new GraphQLObjectType({
       type: MovieType,
       args: { id: { type: GraphQLString } },
       resolve: (parentValue, args)=>{
-        return db.find(u => u.id === args.id)
+        return helper.app.database().ref(`/${date}/movies/`).once("value").then((data)=>{
+          data = data.val();
+          return data.find(u => u.id === args.id)
+        })
+      }
+    },
+    theater: {
+      type: TheaterType,
+      args: { id: { type: GraphQLString } },
+      resolve: (parentValue, args)=>{
+        return helper.app.database().ref(`/${date}/theaters/`).once("value").then((data)=>{
+          data = data.val();
+          return data.find(u => u.id === args.id)
+        })
       }
     }
   }

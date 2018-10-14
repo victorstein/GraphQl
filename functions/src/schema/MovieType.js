@@ -5,11 +5,16 @@
  * @requires graphql
  * @requires GraphQLObjectType
  * @requires GraphQLString
+ * @requires TheaterType
+ * @requires HelperFunctions
  * @author Alfonso Gomez
  * @see {@link https://graphql.org/graphql-js/type/}
 */
 
-import graphql, { GraphQLObjectType, GraphQLString } from 'graphql'
+import graphql, { GraphQLObjectType, GraphQLString, GraphQLList } from 'graphql'
+import * as admin from 'firebase-admin'
+import * as helper from '../helpers/functions'
+import TheaterType from './TheaterType'
 
 /**
  * @constant graphQLObjectType
@@ -19,6 +24,13 @@ import graphql, { GraphQLObjectType, GraphQLString } from 'graphql'
  * @constant GraphQLString
  * @description Destructuring graphQL object to retreive GraphQLString
 */
+
+/**
+ * @constant date
+ * @description constant that contains the current date in format dmyyyy from the helper function getCurrentDateString
+ * @see module:HelperFunctions
+*/
+const date = helper.getCurrentDateString();
 
 /**
  * @function graphQLObjectType
@@ -46,8 +58,9 @@ const MovieType = new GraphQLObjectType({
     * @property {String} trailer string defining the trailer of the movie
     * @property {String} cover_photo string defining the cover_photo of the movie
     * @property {String} small_photo string defining the small_photo of the movie
+    * @property {Array} theaters string defining the small_photo of the movie
   */
-  fields: {
+  fields: ()=> ({
     id: { type: GraphQLString },
     name: { type: GraphQLString },
     rating: { type: GraphQLString },
@@ -59,8 +72,17 @@ const MovieType = new GraphQLObjectType({
     synopsis: { type: GraphQLString },
     trailer: { type: GraphQLString },
     cover_photo: { type: GraphQLString },
-    small_photo: { type: GraphQLString }
-  }
+    small_photo: { type: GraphQLString },
+    theaters: {
+      type: GraphQLList(TheaterType),
+      resolve: (parentValue, args)=>{
+        return helper.app.database().ref(`/${date}/theaters/`).once("value").then((data)=>{
+          data = data.val();
+          return data.filter(u => parentValue.theaters.includes(u.id))
+        })
+      }
+    }
+  })
 })
 
 export default MovieType

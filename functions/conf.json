@@ -2,7 +2,7 @@
     "plugins": [],
     "recurseDepth": 10,
     "source": {
-        "include": ["src/", "src/schema/"],
+        "include": ["src/", "src/schema/", "src/helpers/"],
         "includePattern": ".+\\.js(doc|x)?$",
         "excludePattern": "(^|\\/|\\\\)_"
     },
@@ -25,12 +25,12 @@
         "name": "Cartelera Nicaragua",
         "footerText": "Created by Alfonso Gomez",
         "css": [
-            "../docStyles/styles.css"
+            "./docStyles/styles.css"
         ]
     },
     "opts": {
         "encoding": "utf8",
-        "destination": "./docs/",
+        "destination": "../public/",
         "template": "node_modules/tui-jsdoc-template"
     }
 }
