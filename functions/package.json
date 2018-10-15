@@ -5,7 +5,7 @@
   "main": "Server.js",
   "scripts": {
     "dev": "nodemon ./dist/Server.bundle.js --exec \"npm run build-docs & webpack & npm run server\"",
-    "build-docs": "jsdoc -c ./conf.json ./README.md",
+    "build-docs": "jsdoc -c ./conf.json ../README.md",
     "build": "webpack",
     "server": "node dist/Server.bundle.js",
     "docs": "http-server docs/",
@@ -48,11 +48,13 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "express": "^4.16.3",
     "express-graphql": "^0.6.12",
-    "graphql": "^14.0.2",
     "firebase-admin": "~6.0.0",
-    "firebase-functions": "^2.0.3"
+    "firebase-functions": "^2.0.3",
+    "graphql": "^14.0.2",
+    "puppeteer": "^1.9.0"
   },
   "nodemonConfig": {
     "ignore": [

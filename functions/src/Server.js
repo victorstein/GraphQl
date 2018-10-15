@@ -6,13 +6,17 @@
  * expressGraphQL {@link https://github.com/graphql/express-graphql#simple-setup}<br/>
  * firebase-functions {@link https://firebase.google.com/docs/functions/}<br/>
  * @requires RootQueryType
+ * @requires firebase-admin
  * <br/><br/>
  * @author Alfonso Gomez
 */
+
+import "@babel/polyfill";
 import express from 'express'
+import * as functions from 'firebase-functions'
 import expressGraphQL from 'express-graphql'
 import RootQuery from './schema/RootQueryType'
-import * as functions from 'firebase-functions'
+import crawlData from './helpers/crawler'
 
 /**
  * @constant app
@@ -31,8 +35,8 @@ app.use("/graphql", expressGraphQL({
   graphiql: true
 }));
 
-app.use("/feedDatabase", ()=>{
-
+app.use("/feeddatabase", ()=>{
+  crawlData.start()
 });
 
 /**

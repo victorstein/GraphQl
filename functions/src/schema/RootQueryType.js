@@ -12,10 +12,10 @@
  * @see {@link https://graphql.org/graphql-js/type/}
 */
 
+import * as helper from '../helpers/functions'
 import graphql, { GraphQLObjectType, GraphQLString, GraphQLSchema } from 'graphql'
 import MovieType from './MovieType'
 import TheaterType from './TheaterType'
-import * as helper from '../helpers/functions'
 
 /**
  * @constant date
@@ -48,21 +48,17 @@ const RootQuery = new GraphQLObjectType({
     movie: {
       type: MovieType,
       args: { id: { type: GraphQLString } },
-      resolve: (parentValue, args)=>{
-        return helper.app.database().ref(`/${date}/movies/`).once("value").then((data)=>{
-          data = data.val();
-          return data.find(u => u.id === args.id)
-        })
+      resolve: async (parentValue, args)=>{
+        let data = (await helper.database.ref(`/${date}/movies/`).once("value")).val()
+        return (data) ? data.find(u => u.id === args.id) : null
       }
     },
     theater: {
       type: TheaterType,
       args: { id: { type: GraphQLString } },
-      resolve: (parentValue, args)=>{
-        return helper.app.database().ref(`/${date}/theaters/`).once("value").then((data)=>{
-          data = data.val();
-          return data.find(u => u.id === args.id)
-        })
+      resolve: async (parentValue, args)=>{
+        let data = (await helper.database.ref(`/${date}/theaters/`).once("value")).val()
+        return (data) ? data.find(u => u.id === args.id) : null
       }
     }
   }

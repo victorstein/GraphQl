@@ -12,7 +12,6 @@
 */
 
 import graphql, { GraphQLObjectType, GraphQLString, GraphQLList } from 'graphql'
-import * as admin from 'firebase-admin'
 import * as helper from '../helpers/functions'
 import TheaterType from './TheaterType'
 
@@ -23,6 +22,10 @@ import TheaterType from './TheaterType'
 /**
  * @constant GraphQLString
  * @description Destructuring graphQL object to retreive GraphQLString
+*/
+/**
+ * @constant GraphQLList
+ * @description Destructuring graphQL object to retreive GraphQLList
 */
 
 /**
@@ -75,11 +78,9 @@ const MovieType = new GraphQLObjectType({
     small_photo: { type: GraphQLString },
     theaters: {
       type: GraphQLList(TheaterType),
-      resolve: (parentValue, args)=>{
-        return helper.app.database().ref(`/${date}/theaters/`).once("value").then((data)=>{
-          data = data.val();
-          return data.filter(u => parentValue.theaters.includes(u.id))
-        })
+      resolve: async (parentValue, args)=>{
+        let data = (await helper.database.ref(`/${date}/theaters/`).once("value")).val()
+        return (data) ? data.filter(u => parentValue.theaters.includes(u.id)) : null
       }
     }
   })
